@@ -1,3 +1,78 @@
 body {
     margin: 0;
+    background-color: red;
+    font-family: "Smythe", system-ui;
 } 
+
+.main-container{
+    width: 600px;
+    height: 1161px;
+    background-color: #FFFFFF;
+    margin: auto;
+    margin-top: 50px;
+}
+
+header{
+    height: 167px;
+    background-image: url(images/header-bg-img.png);
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 10px 0 30px 50px;
+    color: white;
+}
+
+header p{
+    font-size: 23px;
+    line-height: 13.8px;
+}
+
+h1{
+    font-size: 39px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.menu-items{
+    width: 508px;
+    height: 140px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D2D2D2;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.image-and-desc{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu-items-description{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items-description > h2{
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 16px;
+}
+
+.add-btn{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.emoji{
+    width: 70px;
+    height: 89px;
+    font-size: 79px;
+}
+
+.grey-text{
+    color: #8B8B8B;
+}

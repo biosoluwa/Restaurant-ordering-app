@@ -14,7 +14,7 @@ body {
 
 header{
     height: 167px;
-    background-image: url(images/header-bg-img.png);
+    background-image: url(/images/header-bg-img.png);
     background-size: cover;
     box-sizing: border-box;
     padding: 10px 0 30px 50px;

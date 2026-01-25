@@ -1,5 +1,4 @@
 import {menuArray} from "./data.js";
-import addBtnImg from './images/add-btn.png'
 
 
 let orderArray = []
@@ -89,7 +88,7 @@ function renderMenu(){
                                             <p>$${menu.price}</p>
                                         </div>
                                     </div>
-                                    <img src="${addBtnImg}" class="add-btn" id="${menu.id}">
+                                    <img src="images/add-btn.png" class="add-btn" id="${menu.id}">
                               </div>`
     })
         document.getElementById('menu').innerHTML = menuItems

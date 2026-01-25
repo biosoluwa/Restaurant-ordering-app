@@ -1,14 +1,35 @@
 import {menuArray} from "./data.js";
 let orderArray = []
+const cardForm = document.getElementById('card-form')
+const modal = document.getElementById('card-details-modal')
+
+
+
+cardForm.addEventListener('submit', function(e){
+    e.preventDefault()
+})
 
 document.addEventListener('click', function(e){
     if(e.target.classList.contains('add-btn')){
     handleAddBtnClick(e.target.id)
-}else if(e.target.classList.contains('remove')){
-    handleRemoveBtnClick(e.target.id)
-}
-
+    }else if(e.target.classList.contains('remove')){
+        handleRemoveBtnClick(e.target.id)
+    }else if(e.target.id === 'complete-order'){
+       modal.style.display = 'inline'
+    } else if(e.target.id === 'pay-btn'){
+        submitForm()   
+     }
 })
+
+function submitForm(){
+    const thanksDiv = document.getElementById('thanks')
+    const cardFormData = new FormData(cardForm)
+    const name = cardFormData.get('userName')
+    modal.style.display = 'none'
+    thanksDiv.style.display = 'flex'
+    thanksDiv.innerHTML = `<p>Thanks ${name}! Your order is on it's way</p>`
+
+}
 
 function handleAddBtnClick(menuId){
     const targetObj = menuArray.filter(function(menu){

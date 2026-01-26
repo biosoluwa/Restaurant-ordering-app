@@ -3,13 +3,12 @@ import {menuArray} from "./data.js";
 
 let orderArray = []
 const cardForm = document.getElementById('card-form')
+
+
 const modal = document.getElementById('card-details-modal')
+const thanksDiv = document.getElementById('thanks')
 
 
-
-cardForm.addEventListener('submit', function(e){
-    e.preventDefault()
-})
 
 document.addEventListener('click', function(e){
     if(e.target.classList.contains('add-btn')){
@@ -19,19 +18,31 @@ document.addEventListener('click', function(e){
     }else if(e.target.id === 'complete-order'){
         document.getElementById('order').classList.remove('showOnPage')
        modal.style.display = 'inline'
-    } else if(e.target.id === 'pay-btn'){
-        submitForm()   
-     }
+    } 
+})
+
+cardForm.addEventListener('submit', function(e){
+    e.preventDefault()
+    submitForm() 
+    orderArray = []
+
+    thanksDiv.style.display = 'flex'
 })
 
 function submitForm(){
-    const thanksDiv = document.getElementById('thanks')
+    let nameInput = document.getElementById('userName')
+    let cardInput = document.getElementById('card-number')
+    let cvvInput = document.getElementById('card-cvv')
+
     const cardFormData = new FormData(cardForm)
     const name = cardFormData.get('userName')
-    modal.style.display = 'none'
-    thanksDiv.style.display = 'flex'
-    thanksDiv.innerHTML = `<p>Thanks ${name}! Your order is on it's way</p>`
 
+     nameInput.value = ''
+     cardInput.value = ''
+     cvvInput.value = ''
+    modal.style.display = 'none'
+
+    thanksDiv.innerHTML = `<p>Thanks ${name}! Your order is on it's way</p>`   
 }
 
 function handleAddBtnClick(menuId){
@@ -39,6 +50,7 @@ function handleAddBtnClick(menuId){
         return (Number(menuId) === menu.id)
     })[0]
     orderArray.push(targetObj)
+    thanksDiv.style.display = 'none'
     renderOrder()
 }
 

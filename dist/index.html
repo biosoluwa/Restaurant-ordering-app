@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restuarant ordering app</title>
+    <!-- css file -->
+    <!-- google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-IGPiRBtE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C_jzggew.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- header  -->
+       <header>
+        <h1>Jimmy's Diner</h1>
+        <p>The best burgers and pizzas in town</p>
+       </header>
+          <!-- main  -->
+       <main>
+            <section>
+                <!-- to render the menu  -->
+                <div class="menu" id="menu"></div>
+            </section>
+            <!-- to render order  -->
+            <section>
+                <div class="order" id="order">
+                    <h2>Your order</h2>
+                    <div id="order-details"></div>
+                    <button class="complete-order" id="complete-order">Complete Order</button>
+                </div>
+            </section>
+            <!-- thank you div  -->
+             <div class="thanks" id="thanks"></div>
+
+        </main>
+    </div>
+        <!-- card details modal  -->
+            <div class="card-details-modal" id="card-details-modal">
+                <h2>Enter card details</h2>
+                <form action="" id="card-form">
+                    <input 
+                        type="text" 
+                        placeholder="Enter your name" 
+                        id="userName" 
+                        name="userName" 
+                        required>
+                    <input 
+                        type="text" 
+                        name="cardNumber" 
+                        placeholder="Enter card number(16 digits)" 
+                        id="card-number" 
+                        required
+                        pattern="[0-9]{16}">
+                    <input 
+                        type="text" 
+                        name="cardCvv" 
+                        placeholder="Enter CVV(3 digits)" 
+                        id="card-cvv" 
+                        required pattern="[0-9]{3}">
+                    <button id="pay-btn" class="pay-btn" type="submit"> Pay</button>
+                </form>
+            </div>
+    
+</body>
+</html>
+

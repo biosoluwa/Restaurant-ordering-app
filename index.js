@@ -67,15 +67,10 @@ function handleRemoveBtnClick(menuId){
      
        orderArray = orderArray.filter(function(item){
             if(item && item.id === Number(menuId) ){
-               return item.count --
-            }else{
-                return Number(menuId) !== item.id
+                item.count --
             }
-       })
-
-       orderArray.forEach(function(){
-
-       })
+                return item.count > 0
+            })
        renderOrder()
 }
 
@@ -83,7 +78,7 @@ function handleRemoveBtnClick(menuId){
 function renderOrder(){
      let orderHtml = ''
     document.getElementById('order').classList.add('showOnPage')
-
+  if(orderArray.length > 0){
     orderArray.forEach(function(item){
       item.totalItemPrice = item.price * item.count
     orderHtml += `
@@ -104,6 +99,9 @@ function renderOrder(){
                       <p>$${totalOrder}</p>
                    </div>`
     document.getElementById('order-details').innerHTML = orderHtml  
+} else{
+    document.getElementById('order').classList.remove('showOnPage')
+}
 }
 
 
